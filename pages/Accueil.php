@@ -11,7 +11,7 @@ $NomUtilisateur=$_SESSION['Login'];
     </div>
     <div class="accueil">
         <div class="contenu">
-            <div id="TopPlaylist" hidden>
+            <div id="TopPlaylist">
                 <p>Top Playlist</p>
                 <?php
                 $requete="SELECT * FROM `playlist` ORDER BY `Like` DESC LIMIT 5 ";
@@ -49,9 +49,9 @@ $NomUtilisateur=$_SESSION['Login'];
             </div>
         </div>
     </div>
-    <div id="Upload" hidden>
-        <div id="EffetFondNoir">
-            <?php include("pages/Upload.php");?>
-        </div>
+</div>
+<div id="Upload" hidden>
+    <div id="EffetFondNoir">
+        <?php include("pages/Upload.php");?>
     </div>
 </div>
