@@ -55,7 +55,7 @@
 
     $NomMusic=htmlspecialchars(@$_POST['Nom_Music']);
     $NomArtist=htmlspecialchars(@$_POST['Nom_Artist']);
-    $NomAlbum=htmlspecialchars(@$_POST['Nom_Album']);
+    $NomAlbum=htmlspecialchars(@$_POST['NomAlbum']);
     $Featuring=htmlspecialchars(@$_POST['Featuring']);
     $Radio=htmlspecialchars(@$_POST['radio']);
     $Radio=htmlspecialchars(@$_POST['radio']);

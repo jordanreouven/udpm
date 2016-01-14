@@ -1,6 +1,7 @@
 <?php 
     session_start();
     $NomUtilisateur=$_SESSION['Login'];
+include("Include/ConnexionBaseDeDonnees.php");
 ?>
 <div class="page">
     <div class="header">
@@ -26,3 +27,8 @@
         </div>
     </div>
 </div> 
+<div id="Upload" hidden>
+    <div id="EffetFondNoir">
+        <?php include("pages/Upload.php");?>
+    </div>
+</div>
