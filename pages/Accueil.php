@@ -2,8 +2,12 @@
 
 include("Include/ConnexionBaseDeDonnees.php");
 session_start();
-$NomUtilisateur=$_SESSION['Login'];
 
+if(isset($_SESSION['Login'])){
+    $NomUtilisateur=$_SESSION['Login'];
+}else{
+    header("Location:index.php");  
+}
 ?>
 <div class="page">
     <div class="header">
