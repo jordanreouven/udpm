@@ -133,4 +133,27 @@ $(document).ready(function(){
         $("#inscription").click(function(){
             window.location.href="index.php?page=Inscription";   
         });
+        
+        /*------------------------------------------------------------------*/
+            $("#liMusic").hover(function(){
+                $("#flechdroite1").css("border-left","10px solid #8A3640");
+            },
+            function(){
+                $("#flechdroite1").css("border-left","10px solid #5A3640");
+            });
+    
+            $("#liPlaylist").hover(function(){
+                $("#flechdroite2").css("border-left","10px solid #8A3640");
+            },
+            function(){
+                $("#flechdroite2").css("border-left","10px solid #5A3640");
+            });
+    
+            $("#liArtist").hover(function(){
+                $("#flechdroite3").css("border-left","10px solid #8A3640");
+            },
+            function(){
+                $("#flechdroite3").css("border-left","10px solid #5A3640");
+            });
+        /*------------------------------------------------------------------*/
     });    
