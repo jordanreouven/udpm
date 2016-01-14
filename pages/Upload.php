@@ -61,12 +61,13 @@
     $Radio=htmlspecialchars(@$_POST['radio']);
     $SingleName="";
     $NomPhoto="";
+    $Envoie="";
     $DestinationMusic='utilisateur/'.$NomUtilisateur.'/Music/';
     $DestinationImg='utilisateur/'.$NomUtilisateur.'/Img/ImgMusic/';
 
 
     if($Radio=="single"){
-        $NomAlbum="";
+        $NomAlbum=null;
         $SingleName=$NomMusic;
     }
 
@@ -90,23 +91,26 @@
             $ExtensionAutoriserMusic= array("mp3","ogg","flac","wav");
             if(in_array($Extension,$ExtensionAutoriserPhoto)){
                 move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationImg.$_FILES['files']['name'][$f]);
-                $NomPhoto=$_FILES['files']['tmp_name'][$f];
+                $NomPhoto=$_FILES['files']['name'][$f];
+                $Envoie="OK";
             }
             else if(in_array($Extension,$ExtensionAutoriserMusic)){
                 move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationMusic.$NomMusic.".".$Extension);
             }
             else{
                 $erreur = "Votre fichier n'est pas une image ou une musique.";   
+                $Envoie="";
             }
         }
-        /*------------------------------------------------ Insère dans la base de données le nom de la musique------------------------------------------------------*/
-    $requete="INSERT INTO music (`Name`,`Artist`,`Featuring`,`AlbumName`,`SingleName`,`NameOfPicture`) VALUES('$NomMusic','$NomArtist','$Featuring','$NomAlbum','$SingleName','$NomPhoto')";
-    //echo $requete;
-    bdConnect($requete, 'insert');
-    /*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    /*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
     }
     
-    
+    if($Envoie=="OK"){
+        /*------------------------------------------------ Insère dans la base de données la musique et ses informations ---------------------------------------------------------------------------*/
+        $requete="INSERT INTO music(`NameOfMusic`,`Artist`,`Featuring`,`AlbumName`,`SingleName`,`NameOfPicture`) VALUES('$NomMusic','$NomArtist','$Featuring','$NomAlbum','$SingleName','$NomPhoto')";
+        echo $requete;
+        bdConnect($requete, 'insert');
+        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/   
+    }
 ?>
 
