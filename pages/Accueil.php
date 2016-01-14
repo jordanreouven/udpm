@@ -34,7 +34,7 @@ if(isset($_SESSION['Login'])){
                 $resultat=bdConnect($requete, 'select');
                 while ($ligne=$resultat->fetch()){
                             echo"<div style=' width:200px; height:150px; float:left;'align=center>";
-                            echo $ligne['Name'];
+                            echo $ligne['NameOfMusic'];
                             echo"</div>";
                         }
                 ?>
