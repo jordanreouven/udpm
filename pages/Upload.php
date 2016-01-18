@@ -9,9 +9,10 @@
         }
     }
 </script>
-<div class="FormUpload" align=center hidden>
+<div class="FormUpload" align=center>
     <form enctype="multipart/form-data" action="" method="post" style="position:relative;z-index:4;"><br>
         <table style="width:100%; text-align:center;">
+            
             <tr style="height:40px;">
                 <td>Nom de la musique:</td><td><input type="text" name="Nom_Music" required></td>
             </tr>
@@ -47,6 +48,9 @@
             <tr  style="height:40px;">
               <td><input id="UploadMusic"type="submit" value="Envoyer ces fichiers" /></td>
             </tr>
+            <tr style="height:40px">
+                <td><a href="" style="color:black;"><-- retour</a></td>
+            </tr>
         </table>
     </form>
 </div>
@@ -75,17 +79,12 @@
     
 
     if(!empty($_FILES)){
-        foreach ($_FILES['files']['name'] as $f => $src) {
-            $Extension = strtolower(substr($_FILES['files']['name'][$f],-4));
-            
+        foreach ($_FILES['files']['name'] as $f) {
+            echo $_FILES['files']['name'][$f];
+            /*$Extension = strtolower(substr($_FILES['files']['name'][$f],-4));
             if($Extension==".jpg")$Extension="jpg";
             if($Extension==".gif")$Extension="gif";
             if($Extension==".png")$Extension="png";
-            
-            if($Extension==".mp3")$Extension="mp3";
-            if($Extension==".ogg")$Extension="ogg";
-            if($Extension==".wav")$Extension="wav";
-            
             $ExtensionAutoriserPhoto= array("jpeg","jpg","png");
             $ExtensionAutoriserMusic= array("mp3","ogg","flac","wav");
             if(in_array($Extension,$ExtensionAutoriserPhoto)){
@@ -93,11 +92,11 @@
                 $NomPhoto=$_FILES['files']['tmp_name'][$f];
             }
             else if(in_array($Extension,$ExtensionAutoriserMusic)){
-                move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationMusic.$NomMusic.".".$Extension);
+                move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationMusic.$_FILES['files']['name'][$f]);
             }
             else{
                 $erreur = "Votre fichier n'est pas une image ou une musique.";   
-            }
+            }*/
         }
         /*------------------------------------------------ Insère dans la base de données le nom de la musique------------------------------------------------------*/
     $requete="INSERT INTO music (`Name`,`Artist`,`Featuring`,`AlbumName`,`SingleName`,`NameOfPicture`) VALUES('$NomMusic','$NomArtist','$Featuring','$NomAlbum','$SingleName','$NomPhoto')";
