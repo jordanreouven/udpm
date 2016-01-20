@@ -9,7 +9,7 @@
     $liste = $requete->fetchAll();
 
     $resultat = str_replace($_POST['keyword'], '<b><u>'.$_POST['keyword'].'</u></b>', $_POST['keyword']);
-    echo '<li style="list-style: none;" onclick="RechercheGeneral(\''.str_replace("'", "\'", $_POST['keyword']).'\')">Recherche pour \''.$resultat.'\'</li>';
+    echo '<li style="list-style: none;" onclick="RechercheGenerale(\''.str_replace("'", "\'", $_POST['keyword']).'\')">Recherche pour \''.$resultat.'\'</li>';
     foreach ($liste as $rs) {
         // Mettre le texte entré en gras.
         $resultat = str_replace($_POST['keyword'], '<b><u>'.$_POST['keyword'].'</u></b>', $rs['Firstname']." ".$rs['Surname']);

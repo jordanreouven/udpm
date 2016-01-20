@@ -9,16 +9,10 @@
         }
     }
 </script>
-<<<<<<< HEAD
 <div class="FormUpload" align=center>
     <form enctype="multipart/form-data" action="" method="post" style="position:relative;z-index:4;"><br>
         <table style="width:100%; text-align:center;">
             
-=======
-<div class="FormUpload" align=center hidden>
-    <form enctype="multipart/form-data" action="" method="post" style="position:relative;z-index:4;"><br>
-        <table style="width:100%; text-align:center;">
->>>>>>> origin/master
             <tr style="height:40px;">
                 <td>Nom de la musique:</td><td><input type="text" name="Nom_Music" required></td>
             </tr>
@@ -54,12 +48,9 @@
             <tr  style="height:40px;">
               <td><input id="UploadMusic"type="submit" value="Envoyer ces fichiers" /></td>
             </tr>
-<<<<<<< HEAD
             <tr style="height:40px">
                 <td><a href="" style="color:black;"><-- retour</a></td>
             </tr>
-=======
->>>>>>> origin/master
         </table>
     </form>
 </div>
@@ -68,30 +59,18 @@
 
     $NomMusic=htmlspecialchars(@$_POST['Nom_Music']);
     $NomArtist=htmlspecialchars(@$_POST['Nom_Artist']);
-<<<<<<< HEAD
     $NomAlbum=htmlspecialchars(@$_POST['Nom_Album']);
-=======
-    $NomAlbum=htmlspecialchars(@$_POST['NomAlbum']);
->>>>>>> origin/master
     $Featuring=htmlspecialchars(@$_POST['Featuring']);
     $Radio=htmlspecialchars(@$_POST['radio']);
     $Radio=htmlspecialchars(@$_POST['radio']);
     $SingleName="";
     $NomPhoto="";
-<<<<<<< HEAD
-=======
-    $Envoie="";
->>>>>>> origin/master
     $DestinationMusic='utilisateur/'.$NomUtilisateur.'/Music/';
     $DestinationImg='utilisateur/'.$NomUtilisateur.'/Img/ImgMusic/';
 
 
     if($Radio=="single"){
-<<<<<<< HEAD
         $NomAlbum="";
-=======
-        $NomAlbum=null;
->>>>>>> origin/master
         $SingleName=$NomMusic;
     }
 
@@ -100,31 +79,16 @@
     
 
     if(!empty($_FILES)){
-<<<<<<< HEAD
         foreach ($_FILES['files']['name'] as $f) {
             echo $_FILES['files']['name'][$f];
             /*$Extension = strtolower(substr($_FILES['files']['name'][$f],-4));
             if($Extension==".jpg")$Extension="jpg";
             if($Extension==".gif")$Extension="gif";
             if($Extension==".png")$Extension="png";
-=======
-        foreach ($_FILES['files']['name'] as $f => $src) {
-            $Extension = strtolower(substr($_FILES['files']['name'][$f],-4));
-            
-            if($Extension==".jpg")$Extension="jpg";
-            if($Extension==".gif")$Extension="gif";
-            if($Extension==".png")$Extension="png";
-            
-            if($Extension==".mp3")$Extension="mp3";
-            if($Extension==".ogg")$Extension="ogg";
-            if($Extension==".wav")$Extension="wav";
-            
->>>>>>> origin/master
             $ExtensionAutoriserPhoto= array("jpeg","jpg","png");
             $ExtensionAutoriserMusic= array("mp3","ogg","flac","wav");
             if(in_array($Extension,$ExtensionAutoriserPhoto)){
                 move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationImg.$_FILES['files']['name'][$f]);
-<<<<<<< HEAD
                 $NomPhoto=$_FILES['files']['tmp_name'][$f];
             }
             else if(in_array($Extension,$ExtensionAutoriserMusic)){
@@ -143,33 +107,5 @@
     }
     
     
-=======
-                $NomPhoto=$_FILES['files']['name'][$f];
-                $Envoie="OK";
-            }
-            else if(in_array($Extension,$ExtensionAutoriserMusic)){
-                move_uploaded_file($_FILES['files']['tmp_name'][$f],$DestinationMusic.$NomMusic.".".$Extension);
-            }
-            else{
-                $erreur = "Votre fichier n'est pas une image ou une musique.";   
-                $Envoie="";
-            }
-        }
-    }
-    
-    if($Envoie=="OK"){
-        /*------------------------------------------------ Insère dans la base de données la musique et ses informations ---------------------------------------------------------------------------*/
-        $requete="INSERT INTO music(`NameOfMusic`,`Artist`,`Featuring`,`AlbumName`,`SingleName`,`NameOfPicture`) VALUES('$NomMusic','$NomArtist','$Featuring','$NomAlbum','$SingleName','$NomPhoto')";
-        bdConnect($requete, 'insert');
-        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-        
-        /*--------------------------------------------------------------------- Insère dans la base de données l'artist  ---------------------------------------------------------------------------*/
-        $requete="INSERT INTO artist(`NameArtist`) VALUES('$NomArtist')";
-        bdConnect($requete, 'insert');
-        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-        /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    }
->>>>>>> origin/master
 ?>
 

@@ -21,7 +21,6 @@ if(isset($_GET['page'])){
         <script src="js/AfficherUpload.js"></script>
     </head>
     <body class="body">
-        <div class="EffetPage">
         <?php
         switch($Page){
             case'ConnexionInscription':
@@ -39,8 +38,8 @@ if(isset($_GET['page'])){
             case'Inscription':
                 include('pages/Inscription.php');
                 break;
-            case'RechercheGeneral':
-                include('pages/RechercheGeneral.php');
+            case'RechercheGenerale':
+                include('pages/RechercheGenerale.php');
                 break;
             case'Profil':
                 include('pages/Profil.php');
@@ -52,7 +51,6 @@ if(isset($_GET['page'])){
                 include('pages/Accueil.php');
                 break;
         } ?>
-        </div>
         <div class="footer" align=center><div id="footer"><p align=center>- Alessandro Sipala &amp; Jordan Assayah -</p></div></div>
     </body>
 </html>

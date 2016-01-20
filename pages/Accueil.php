@@ -2,17 +2,8 @@
 
 include("Include/ConnexionBaseDeDonnees.php");
 session_start();
-<<<<<<< HEAD
 $NomUtilisateur=$_SESSION['Login'];
 
-=======
-
-if(isset($_SESSION['Login'])){
-    $NomUtilisateur=$_SESSION['Login'];
-}else{
-    header("Location:index.php");  
-}
->>>>>>> origin/master
 ?>
 <div class="page">
     <div class="header">
@@ -20,11 +11,7 @@ if(isset($_SESSION['Login'])){
     </div>
     <div class="accueil">
         <div class="contenu">
-<<<<<<< HEAD
             <div id="TopPlaylist" hidden>
-=======
-            <div id="TopPlaylist">
->>>>>>> origin/master
                 <p>Top Playlist</p>
                 <?php
                 $requete="SELECT * FROM `playlist` ORDER BY `Like` DESC LIMIT 5 ";
@@ -43,11 +30,7 @@ if(isset($_SESSION['Login'])){
                 $resultat=bdConnect($requete, 'select');
                 while ($ligne=$resultat->fetch()){
                             echo"<div style=' width:200px; height:150px; float:left;'align=center>";
-<<<<<<< HEAD
-                            echo $ligne['Name'];
-=======
                             echo $ligne['NameOfMusic'];
->>>>>>> origin/master
                             echo"</div>";
                         }
                 ?>
@@ -66,16 +49,9 @@ if(isset($_SESSION['Login'])){
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <div id="Upload" hidden>
         <div id="EffetFondNoir">
             <?php include("pages/Upload.php");?>
         </div>
-=======
-</div>
-<div id="Upload" hidden>
-    <div id="EffetFondNoir">
-        <?php include("pages/Upload.php");?>
->>>>>>> origin/master
     </div>
 </div>

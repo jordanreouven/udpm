@@ -11,7 +11,6 @@
         width: 300px;
         margin:210px auto 30px auto;
     }
-
     .inscription{
         margin-left: 0px;
         width: 300px;
@@ -20,6 +19,23 @@
     }
     #barre{
         display: none;
+    }
+    .RechercheGenerale {
+        float: left;
+        width: 100%;
+        position: relative;
+        background-color: #25373D;
+        min-height: 790px;
+        height: auto;
+        z-index: 1;
+    }
+    .contenu{
+        width:100%;
+        height:100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
     }
 }
 @media (min-width: 320px){
@@ -235,6 +251,44 @@
         margin-top:100px;
         margin-bottom:100px;
     }
+    .contenu{
+        width:1000px;
+        height:100%;
+        margin: 10px auto;
+        position: relative;
+        z-index: 1;
+    }
+    #MenuRechercheGenerale {
+        width: 200px;
+        height: auto;
+        float: left;
+    }
+    #MenuRechercheGenerale a{
+        text-decoration: none;
+    }
+    #MenuRechercheGenerale ul{
+        width: 100%;
+        height: auto;
+        float: left;
+        padding-left: 0;
+        margin: 20px 0 0 0;
+    }
+    #MenuRechercheGenerale ul li{
+        width: 100%;
+        list-style: none;
+        display: block;
+        background: #5A3640;
+        color:#b47f2a;
+        padding: 10px 0 10px 10px;
+    }
+    #ResultatsRechercheGenerale{
+        margin: 20px 0 0 10px;
+        width:790px;
+        min-height: 300px;
+        height:100%;
+        float: left;
+        box-shadow: 0 0 30px -5px #000 inset;
+    }
 }
 html{
     margin: 0;
@@ -438,7 +492,6 @@ label{
     top: 20px; 
     position: relative;
 }
-
 #passwd {
     width: 220px;
     height: 25px;
@@ -462,7 +515,6 @@ label{
 #passwd:focus{
     outline: none;
 }
-
 #login {
     width: 220px;
     height: 25px; 
@@ -487,7 +539,6 @@ label{
 #login:hover{
     cursor: text;
 }
-
 #inscription {
     width: 40px;
     height: 40px;
@@ -557,7 +608,6 @@ label{
     z-index: 1;
     background-color: #8a6426;
 }
-
 .resultat {
     width: 260px;
     height: auto;
@@ -658,7 +708,6 @@ label{
     height: auto;
     z-index: 1;
 }
-
 .ContenuProfile {
     margin-left: auto;
     margin-right: auto;
@@ -677,7 +726,6 @@ label{
     position:relative;
     top:50px;
 }
-
 #OptionUser {
     position: absolute;
     right: 0px;
@@ -736,24 +784,11 @@ label{
 #TopArtiste p{
     top:-20px;
 }
-.contenu{
-    width:100%;
-    height:100%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
-<<<<<<< HEAD
-   
-=======
->>>>>>> origin/master
-}
 .contenu p{
     top:100px;
     position:relative;
     color: #b47f2a;
 }
-
 .Profil {
     float: left;
     width: 100%;
@@ -762,7 +797,6 @@ label{
     min-height: 792px;
     height: auto;
 }
-
 #ListeMenu{
     margin: 10px 0px 0px 40px;
     padding: 0;
@@ -783,8 +817,6 @@ label{
 #ListeMenu li:hover{
     background-color: #7A3640;
 }
-
-<<<<<<< HEAD
 #flechdroite {
     width: 0; 
     height: 0; 
@@ -794,36 +826,6 @@ label{
     left: 99px; top:-23.5px;
     position: relative;
 }
-
-=======
-#flechdroite1 {
-    width: 0; 
-    height: 0; 
-    border-top: 11px solid transparent;
-    border-bottom: 16px solid transparent;
-    border-left: 10px solid #5A3640;
-    left: 180px; 
-    position: relative; 
-}
-#flechdroite2 {
-    width: 0; 
-    height: 0; 
-    border-top: 11px solid transparent;
-    border-bottom: 16px solid transparent;
-    border-left: 10px solid #5A3640;
-    left: 180px; 
-    position: relative; 
-}
-#flechdroite3 {
-    width: 0; 
-    height: 0; 
-    border-top: 11px solid transparent;
-    border-bottom: 16px solid transparent;
-    border-left: 10px solid #5A3640;
-    left: 180px; 
-    position: relative; 
-}
->>>>>>> origin/master
 .upload {
     top: 0;
     width: 100%;
@@ -834,7 +836,6 @@ label{
     margin-right: auto;
     margin-left: auto;
 }
-
 .FormUpload {
     margin: 60px;
     width: 700px;
@@ -847,7 +848,6 @@ label{
     margin-left: -350px; /* Half of the width */
     box-shadow: -1px 2px 40px 3px rgba(0, 0, 0, 0.3) inset;
 }
-
 #IdUser {
     height: 100%;
     background-color: #2E505C;
@@ -855,13 +855,11 @@ label{
     padding-right: 30px;
     float: right;
 }
-
 .player {
     width:100%;
     height:60px;
     background-color: transparent;
 }
-
 .FondPlayer {
     background-color: transparent;
     width: 100%; height: 100%;
@@ -871,21 +869,15 @@ label{
 .FondPlayer ul li{
     display: inline-block;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 #Upload {
     height: 100%;
     width: 100%;
 }
-
 #EffetFondNoir {
     position: absolute;
     z-index: 2;
     background-color: transparent;
     width: 100%; text-align: center;
-<<<<<<< HEAD
     min-height: 840px; height: auto;
     margin: 107px auto 10px auto;
     top: 0;
@@ -899,19 +891,15 @@ label{
     margin-top:40px;
     background-size: cover;
 }
-
 .MesLike{
     width:100px;
     height:200px;
     background-color:white;
-    
-
-
+}
 .RecupMdp {
     height: 100%;
     width: 100%;
 }
-
 .ConnexionInscription {
     float: left;
     width: 100%;
@@ -920,67 +908,48 @@ label{
     min-height: 790px;
     height: auto;
     z-index: 1;
-=======
-    height: 100%;
-    margin: 0 auto 0 auto;
 }
-.RechercheGeneral {
+.RechercheGenerale {
     float: left;
     width: 100%;
-    min-height: 792px;
-    height: auto;
+    position: relative;
     background-color: #25373D;
+    min-height: 790px;
+    height: auto;
+    z-index: 1;
 }
-
-.ResultatRecherche {
-    margin: 0 auto;
-    text-align: center;
-    width: 1100px;
-    height: 100%;
-}
-
-.TitreRecherche {
-    margin: 0 auto;
-    text-align: center;
-    width: 1100px;
-    height: 100%;
-}
-
-#Menu {
-    width:200px;
+#LigneHr {
+    width: 100%;
+    height: 3px;
+    background: #5A3640;
     float: left;
-    text-align: left;
 }
-#Menu a{
-    color: #b47f2a; 
-    text-decoration: none;
+#MenuRechercheGenerale ul li:hover{
+    background: #8A3640;
 }
-#Menu ul{
-    padding: 0 0;
-    margin: 0 auto;
+#music {
+    width: 700px;
+    height:90px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #BBB;
+    box-shadow: 0 0 10px -1px #000;
 }
-#Menu ul li{
-    margin: 0 0 0 0;
-    list-style: none;
-    display:block;
-    text-decoration: none;
-    padding: 5px 0px 10px 10px;
-    width: 170px;
-    height: 12px;float: left;
-    background-color: #5A3640;
+
+#playlist {
+    width: 700px;
+    height:90px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #BBB;
+    box-shadow: 0 0 10px -1px #000;
 }
-#Menu ul li:hover{
-    margin: 0 0 0 0;
-    list-style: none;
-    display:block;
-    text-decoration: none;
-    padding: 5px 0px 10px 10px;
-    width: 170px;
-    height: 12px;float: left;
-    background-color: #8A3640;
-}
-#Resultat {
-    width: 900px;
-    height: auto; float: left;
->>>>>>> origin/master
+
+#artist {
+    width: 700px;
+    height:90px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #BBB;
+    box-shadow: 0 0 10px -1px #000;
 }
